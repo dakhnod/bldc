@@ -71,7 +71,7 @@
 
 // Mark3 version of HW60 with power switch and separate NRF UART.
 //#define HW60_IS_MK3
-#define HW60_IS_MK4
+//#define HW60_IS_MK4
 
 #define HW_SOURCE "hw_60.c"
 #define HW_HEADER "hw_60.h"
@@ -185,6 +185,7 @@
  */
 //#define APP_CUSTOM_TO_USE			"app_custom_template.c"
 //#define APP_CUSTOM_TO_USE			"app_motor_heater.c"
+#define APP_CUSTOM_TO_USE			"app_kickassist.c"
 //#include "app_erockit_conf.h"
 
 #include "hw.h"
