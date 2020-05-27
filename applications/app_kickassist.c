@@ -35,8 +35,10 @@
 #include <string.h>
 #include <stdio.h>
 
-#define VALUES_COUNT_ADC 20
-#define VALUES_COUNT_RPM 20
+#define VALUES_COUNT_ADC 30
+#define VALUES_COUNT_RPM 30
+
+#define ADC_FACTOR 0.9
 
 // Threads
 static THD_FUNCTION(my_thread, arg);
@@ -139,7 +141,7 @@ static THD_FUNCTION(my_thread, arg) {
 			was_stepped_on = stepped_on;
 			if(stepped_on){
 				commands_printf("stepped on");
-				float rpm = avg_rpm();
+				float rpm = avg_rpm() * ADC_FACTOR;
 				mc_interface_set_pid_speed(rpm);
 			}else{
 				commands_printf("stepped off");
